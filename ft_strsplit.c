@@ -11,7 +11,33 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+char	**ft_split(char **ret, char *str, char c)
+{
+		int		i;
+		int		j;
+
+		i = 0;
+		j = 0;
+		while (*str)
+		{
+				if (*str != c)
+				{
+						ret[j][i++] = *str;
+						str++;
+				}
+				else if (str[-1] == ret[j][i])
+				{
+					str++;
+					i = 0;
+					j++;
+				}
+				else
+						str++;
+		}
+
+		return (ret);
+}
 
 char	**ft_strsplit(const char *s, char c)
 {
@@ -32,25 +58,5 @@ char	**ft_strsplit(const char *s, char c)
 	ret = (char**)malloc(sizeof(char**) * nbofstr);
 	while (i < nbofstr)
 		ret[i++] = (char*)ft_memalloc(ft_strlen(str));
-	i = 0;
-	nbofstr = 0;
-	while (*str)
-	{
-		if (*str != c)
-		{
-			ret[nbofstr][i++] = *str;
-			str++;
-		}
-		else if (nbofstr > 0 && (*str - 1) != c || (*str - 1) == ret)
-		{
-			nbofstr++;
-			str++;
-		}
-		else
-			str++;
-		if (ret[nbofstr][0])
-			printf("%s\n", ret[nbofstr]);
-	}
-	printf("7\n");
-	return (ret);
+	return (ft_split(ret, str, c));
 }
