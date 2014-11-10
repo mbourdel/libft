@@ -16,24 +16,23 @@ char	**ft_split(char **ret, char *str, char c)
 {
 		int		i;
 		int		j;
+		int		x;
 
+		x = 0;
 		i = 0;
 		j = 0;
-		while (*str)
+		while (str[x])
 		{
-				if (*str != c)
+				if (str[x] != c)
+						ret[j][i++] = str[x++];
+				else if (str[x - 1] != c && ret[j][0] != '\0')
 				{
-						ret[j][i++] = *str;
-						str++;
-				}
-				else if (str[-1] == ret[j][i])
-				{
-					str++;
+					x++;
 					i = 0;
 					j++;
 				}
 				else
-						str++;
+					x++;
 		}
 
 		return (ret);
