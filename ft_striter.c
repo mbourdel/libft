@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 12:00:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 12:14:03 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 18:39:51 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if (!s || !f)
+		return ;
 	while (*s)
 		f(s++);
 }

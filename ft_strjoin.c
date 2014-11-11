@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 18:54:02 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/06 19:12:49 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 18:47:43 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	i = -1;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	str = ft_memalloc((ft_strlen(s1) + ft_strlen(s2)));
 	while (s1[++i])
 		str[i] = s1[i];

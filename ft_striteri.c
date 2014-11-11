@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 12:05:13 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 12:13:54 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 18:40:55 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int		i;
 
 	i = 0;
+	if (!s || !f)
+		return ;
 	while (*s)
 		f(i++, s++);
 }

@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 12:39:31 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 12:45:52 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 20:24:29 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	char	*ret;
 	int		i;
 
-	ret = ft_memalloc(len);
+	if (!s || !len || !s[start] || !s[start + len + 1])
+		return (NULL);
+	ret = ft_memalloc(len + 1);
 	len += (size_t)start;
 	i = 0;
 	while (start < len)
