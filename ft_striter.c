@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 19:26:03 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 13:17:14 by mbourdel         ###   ########.fr       */
+/*   Created: 2014/11/11 12:00:52 by mbourdel          #+#    #+#             */
+/*   Updated: 2014/11/11 12:14:03 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	while (*s)
+		f(s++);
 }

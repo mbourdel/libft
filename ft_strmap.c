@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 19:26:03 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 13:17:14 by mbourdel         ###   ########.fr       */
+/*   Created: 2014/11/11 12:17:54 by mbourdel          #+#    #+#             */
+/*   Updated: 2014/11/11 12:22:02 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(const char *s)
+char	*ft_strmap(const char *s, char (*f)(char))
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	char	*ret;
+	size_t	retlen;
+	int		i;
+
+	i = 0;
+	retlen = ft_strlen(s);
+	ret = ft_memalloc(retlen);
+	while (*s)
+	{
+		ret[i++] = f(*s);
+		s++;
+	}
+	return (ret);
 }
