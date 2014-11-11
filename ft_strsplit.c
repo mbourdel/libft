@@ -34,7 +34,6 @@ char	**ft_split(char **ret, char *str, char c)
 				else
 					x++;
 		}
-
 		return (ret);
 }
 
