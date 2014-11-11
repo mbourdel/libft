@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 10:36:10 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/07 19:36:13 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/08 18:53:02 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int		ft_toupper(int c);//												done
 int		ft_tolower(int c);//												done
 
 void	*ft_memalloc(size_t size);//										done
-void	ft_memdel(void **ap);
-char	*ft_strnew(size_t size);
-void	ft_strdel(char **as);
+void	ft_memdel(void **ap);//											test
+char	*ft_strnew(size_t size);//										test
+void	ft_strdel(char **as);//											test
 void	ft_strclr(char *s);//												done
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
