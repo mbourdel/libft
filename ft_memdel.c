@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 17:59:03 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/08 18:37:08 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 13:40:54 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	int		i;
-
-	i = 0;
-	while (ap[i])
+	if (ap && *ap)
 	{
-		free(ap[i]);
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
 }

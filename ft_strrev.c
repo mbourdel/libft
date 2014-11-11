@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/11 12:33:29 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 16:55:23 by mbourdel         ###   ########.fr       */
+/*   Created: 2014/11/11 15:34:16 by mbourdel          #+#    #+#             */
+/*   Updated: 2014/11/11 15:53:48 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2)
+char	*ft_strrev(char *s)
 {
-	if (!s1 || !s2)
-		return (0);
-	if (ft_strcmp(s1, s2) == 0)
-		return (1);
-	return (0);
+	char	*rev;
+	int		i;
+	int		x;
+
+	i = 0;
+	x = 0;
+	if (!(rev = ft_memalloc(ft_strlen(s))))
+		return (NULL);
+	while (s[i])
+	{
+		rev[i] = s[i];
+		i++;
+	}
+	i--;
+	while (i >= 0)
+		s[x++] = rev[i--];
+	free(rev);
+	return (s);
 }

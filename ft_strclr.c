@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 17:28:29 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/06 17:31:22 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/11 13:50:33 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	ft_strclr(char *s)
 {
-	size_t	len;
-	size_t	i;
-
-	len = ft_strlen(s);
-	i = 0;
-	while (i++ < len)
-		s[i] = '\0';
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }
