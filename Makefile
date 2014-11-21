@@ -6,7 +6,7 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/12 18:06:02 by mbourdel          #+#    #+#              #
-#    Updated: 2014/11/12 18:45:05 by mbourdel         ###   ########.fr        #
+#    Updated: 2014/11/21 19:39:44 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ SRC =	./ft_atoi.c \
 		./ft_strsub.c \
 		./ft_strtrim.c \
 		./ft_tolower.c \
-		./ft_toupper.c
+		./ft_toupper.c \
+		./ft_realloc.c
 
 OBJ =	./ft_atoi.o \
 		./ft_bzero.o \
@@ -118,7 +119,8 @@ OBJ =	./ft_atoi.o \
 		./ft_strsub.o \
 		./ft_strtrim.o \
 		./ft_tolower.o \
-		./ft_toupper.o
+		./ft_toupper.o \
+		./ft_realloc.o
 
 DEL = rm -f
 

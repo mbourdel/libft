@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 10:36:10 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 17:03:32 by mbourdel         ###   ########.fr       */
+/*   Updated: 2014/11/21 18:45:00 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,6 @@ void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 char	*ft_strrev(char *s);
+void	*ft_realloc(void *ptr, size_t size);
+
 #endif
