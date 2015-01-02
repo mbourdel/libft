@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 12:43:15 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:08:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2014/12/30 19:55:12 by mbourdel          #+#    #+#             */
+/*   Updated: 2014/12/30 20:04:10 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+int		ft_isnbr(char *c)
 {
-	return (ft_strnstr(s1, s2, ft_strlen(s1)));
+	while (*c)
+	{
+		if (!(ft_isdigit(*c)))
+			return (0);
+		c++;
+	}
+	return (1);
 }

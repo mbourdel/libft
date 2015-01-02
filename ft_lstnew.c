@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 10:32:35 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:03:40 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/01/02 19:32:58 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/01/02 22:16:20 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+t_list		*ft_lstnew(const void *content, size_t content_size)
 {
-	size_t		strlen;
-	size_t		i;
+	t_list		*new_link;
 
-	i = 0;
-	if (!dest || !src)
+	if (!(new_link = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
-	strlen = ft_strlen((char*)src);
-	while (i < n)
+	if (!content || !content_size)
 	{
-		if (i > strlen)
-			dest[i] = '\0';
-		else
-			dest[i] = src[i];
-		i++;
+		new_link->content = NULL;
+		new_link->content_size = 0;
 	}
-	return (dest);
+	else
+	{
+		new_link->content = ft_memalloc(content_size);
+		new_link->content = ft_memcpy(new_link->content, content, content_size);
+		new_link->content_size = content_size;
+	}
+	return (new_link);
 }

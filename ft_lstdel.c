@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 12:43:15 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:08:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/01/02 19:52:48 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/01/02 22:30:09 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void		ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	return (ft_strnstr(s1, s2, ft_strlen(s1)));
+	t_list		*tmp;
+
+	if (!alst || !del)
+		return ;
+	while (*alst)
+	{
+		tmp = (*alst)->next;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = tmp;
+	}
+	*alst = NULL;
+	return ;
 }

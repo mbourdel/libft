@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 12:43:15 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:08:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/01/02 20:09:38 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/01/02 22:45:06 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	return (ft_strnstr(s1, s2, ft_strlen(s1)));
+	t_list	*sortie;
+
+	if (lst)
+	{
+		sortie = f(lst);
+		sortie->next = ft_lstmap(lst->next, f);
+		return (sortie);
+	}
+	return (NULL);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 12:43:15 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:08:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/01/02 19:54:20 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/01/02 22:28:13 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void		ft_lstadd(t_list **alst, t_list *new)
 {
-	return (ft_strnstr(s1, s2, ft_strlen(s1)));
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
+	return ;
 }

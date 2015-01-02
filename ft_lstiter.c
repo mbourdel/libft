@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 12:43:15 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 18:08:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/01/02 20:07:46 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/01/02 22:07:14 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	return (ft_strnstr(s1, s2, ft_strlen(s1)));
-}
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		(*f)(lst);
+		lst = lst->next;
+	}
+	return ;
+}	
