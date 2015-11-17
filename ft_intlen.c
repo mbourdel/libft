@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/06 18:43:38 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/17 12:04:15 by mbourdel         ###   ########.fr       */
+/*   Created: 2015/03/19 13:51:51 by mbourdel          #+#    #+#             */
+/*   Updated: 2015/03/21 13:40:28 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(const char *s, int fd)
+size_t			ft_intlen(int nbr)
 {
-	int		i;
+	size_t		i;
 
-	i = 0;
-	while (s[i])
+	i = 1;
+	if (nbr < 0)
+	{
 		i++;
-	write(fd, s, i);
+		nbr *= (-1);
+	}
+	while (nbr >= 10)
+	{
+		i++;
+		nbr = (nbr / 10);
+	}
+	return (i);
 }

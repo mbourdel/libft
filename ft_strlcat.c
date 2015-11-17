@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 12:03:23 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/11 19:02:44 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/17 11:37:13 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dlen = dest - dst;
 	n = size - dlen;
 	if (n == 0)
-		return (dlen + strlen(s));
+		return (dlen + ft_strlen(s));
 	while (*s)
 	{
 		if (n != 1)

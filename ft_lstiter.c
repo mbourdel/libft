@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/02 20:07:46 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/01/02 22:07:14 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/01/02 22:56:58 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,4 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 		lst = lst->next;
 	}
 	return ;
-}	
+}

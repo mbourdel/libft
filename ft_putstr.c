@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 17:21:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/06 18:22:36 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/17 12:02:40 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	ft_putstr(const char *s)
 
 	i = 0;
 	while (s[i])
-		ft_putchar(s[i++]);
+		i++;
+	write(1, s, i);
 }
