@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 10:36:10 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/03/21 13:40:49 by mbourdel         ###   ########.fr       */
+/*   Updated: 2016/03/26 23:38:30 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,8 @@ void				*ft_realloc(void *ptr, size_t size);
 int					ft_isnbr(char *c);
 char				*ft_ftoa(float nbr);
 size_t				ft_intlen(int nbr);
+int					ft_isblank(int c);
+double				ft_atod(const char *str);
+float				ft_atof(const char *str);
 
 #endif

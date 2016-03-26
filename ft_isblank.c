@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mainstrstr.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 12:17:53 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/05 12:30:59 by mbourdel         ###   ########.fr       */
+/*   Created: 2016/03/26 23:25:03 by mbourdel          #+#    #+#             */
+/*   Updated: 2016/03/26 23:27:19 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		main(void)
+int		ft_isblank(int c)
 {
-	printf("%s", ft_strstr("coucou tuveux voir ma bite ?", "teub"));
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\r'
+			|| c == '\f')
+		return (1);
 	return (0);
 }

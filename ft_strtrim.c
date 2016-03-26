@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/07 19:12:16 by mbourdel          #+#    #+#             */
-/*   Updated: 2014/11/12 18:01:43 by mbourdel         ###   ########.fr       */
+/*   Updated: 2016/03/23 16:25:31 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ char		*ft_strtrim(char const *s)
 	while (len > i && ft_isblanc(s[len]))
 		len--;
 	if (len < i)
-		return (ret = ft_strdup (""));
+		return (ret = ft_strdup(""));
 	return (ret = ft_strsub(s, i, len - (size_t)i + 1));
 }
